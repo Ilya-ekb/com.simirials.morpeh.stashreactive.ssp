@@ -1,12 +1,12 @@
 {
-  "name": "com.simirials.morpeh.stashreactive.ssp",
+  "name": "com.morpeh.stashreactive.ssp",
   "displayName": "Morpeh Stash Reactive (SystemStateProcessor)",
   "description": "Reactive Added/Removed events for Stash<T> using Morpeh.SystemStateProcessor.",
   "version": "1.0.1",
   "unity": "2021.3",
   "license": "MIT",
   "author": {
-    "name": "Simirials"
+    "name": "@oPlayI"
   },
   "documentationUrl": "https://github.com/your-org/morpeh-stash-reactive-ssp",
   "changelogUrl": "https://github.com/your-org/morpeh-stash-reactive-ssp/blob/main/CHANGELOG.md",
