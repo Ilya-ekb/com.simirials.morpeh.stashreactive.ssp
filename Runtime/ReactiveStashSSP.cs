@@ -11,9 +11,11 @@ namespace Morpeh.ReactiveSSP {
     [Il2CppSetOption(Option.NullChecks, false)]
     [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
     [Il2CppSetOption(Option.DivideByZeroChecks, false)]
-    public sealed class ReactiveStashSSP<T> : UpdateSystem where T : struct, IComponent {
+    public sealed class ReactiveStashSSP<T> : ISystem where T : struct, IComponent {
         public event Action<Entity> Added;
         public event Action<Entity> Removed;
+        
+        public World World { get; set; }
 
         private SystemStateProcessor<State> processor;
         private readonly bool emitExistingOnAwake;
@@ -22,7 +24,7 @@ namespace Morpeh.ReactiveSSP {
             this.emitExistingOnAwake = emitExistingOnAwake;
         }
 
-        public override void OnAwake() {
+        public void OnAwake() {
             processor = World.Filter.With<T>()
                 .ToSystemStateProcessor(Create, Remove);
             if (emitExistingOnAwake) {
@@ -30,9 +32,9 @@ namespace Morpeh.ReactiveSSP {
             }
         }
 
-        public override void OnUpdate(float deltaTime) => processor.Process();
+        public void OnUpdate(float deltaTime) => processor.Process();
 
-        public override void Dispose() {
+        public void Dispose() {
             processor.Dispose();
             Added = null;
             Removed = null;
