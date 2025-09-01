@@ -8,9 +8,9 @@
   "author": {
     "name": "@oPlayI"
   },
-  "documentationUrl": "https://github.com/your-org/morpeh-stash-reactive-ssp",
-  "changelogUrl": "https://github.com/your-org/morpeh-stash-reactive-ssp/blob/main/CHANGELOG.md",
-  "licensesUrl": "https://github.com/your-org/morpeh-stash-reactive-ssp/blob/main/LICENSE.md",
+  "documentationUrl": "https://github.com/Ilya-ekb/com.simirials.morpeh.stashreactive.ssp/blob/main/Documentation~/README.md",
+  "changelogUrl": "https://github.com/Ilya-ekb/com.simirials.morpeh.stashreactive.ssp/blob/main/Documentation~/CHANGELOG.md",
+  "licensesUrl": "https://github.com/Ilya-ekb/com.simirials.morpeh.stashreactive.ssp/blob/main/Documentation~LICENSE.md",
   "keywords": [
     "morpeh",
     "ecs",
