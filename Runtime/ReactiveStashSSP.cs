@@ -78,7 +78,7 @@ namespace Morpeh.ReactiveSSP {
     }
 
     public static class ReactiveStashSSPExtensions {
-        public static ReactiveStashSSP<T> AddReactiveStashSSP<T>(
+        public static ReactiveStashSSP<T> GetReactiveStashSSP<T>(
             this World world, int order = 100, bool emitExistingOnAwake = true)
             where T : struct, IComponent
             => ReactiveRegistry<T>.GetOrCreate(world, order, emitExistingOnAwake);
