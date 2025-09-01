@@ -2,15 +2,15 @@
   "name": "com.morpeh.stashreactive.ssp",
   "displayName": "Morpeh Stash Reactive (SystemStateProcessor)",
   "description": "Reactive Added/Removed events for Stash<T> using Morpeh.SystemStateProcessor.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "unity": "2021.3",
   "license": "MIT",
   "author": {
     "name": "@oPlayI"
   },
-  "documentationUrl": "https://github.com/Ilya-ekb/com.simirials.morpeh.stashreactive.ssp/blob/main/Documentation~/README.md",
-  "changelogUrl": "https://github.com/Ilya-ekb/com.simirials.morpeh.stashreactive.ssp/blob/main/Documentation~/CHANGELOG.md",
-  "licensesUrl": "https://github.com/Ilya-ekb/com.simirials.morpeh.stashreactive.ssp/blob/main/Documentation~LICENSE.md",
+  "documentationUrl": "https://github.com/Ilya-ekb/morpeh-stash-reactive/blob/main/Documentation~/README.md",
+  "changelogUrl": "https://github.com/Ilya-ekb/morpeh-stash-reactive/blob/main/Documentation~/CHANGELOG.md",
+  "licensesUrl": "https://github.com/Ilya-ekb/morpeh-stash-reactive/blob/main/Documentation~LICENSE.md",
   "keywords": [
     "morpeh",
     "ecs",
