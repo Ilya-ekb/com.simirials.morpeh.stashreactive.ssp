@@ -1,0 +1,13 @@
+{
+  "name": "Simirials.Morpeh.StashReactive.SSP",
+  "rootNamespace": "Morpeh.ReactiveSSP",
+  "references": [
+    "Scellecs.Morpeh",
+    "Scellecs.Morpeh.SystemStateProcessor"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "noEngineReferences": false
+}

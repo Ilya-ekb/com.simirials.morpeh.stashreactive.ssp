@@ -1,0 +1,26 @@
+{
+  "name": "com.simirials.morpeh.stashreactive.ssp",
+  "displayName": "Morpeh Stash Reactive (SystemStateProcessor)",
+  "description": "Реактивные события Added/Removed для Stash<T> на базе Morpeh.SystemStateProcessor.",
+  "version": "1.0.0",
+  "unity": "2021.3",
+  "license": "MIT",
+  "author": {
+    "name": "Simirials"
+  },
+  "keywords": [
+    "morpeh",
+    "ecs",
+    "reactive",
+    "systemstate",
+    "stash",
+    "events"
+  ],
+  "samples": [
+    {
+      "displayName": "Basic Usage",
+      "description": "Мини-пример подключения и логирования событий Added/Removed.",
+      "path": "Samples~/Basic Usage"
+    }
+  ]
+}
