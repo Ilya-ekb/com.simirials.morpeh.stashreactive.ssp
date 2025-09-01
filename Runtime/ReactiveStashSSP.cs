@@ -18,7 +18,7 @@ namespace Morpeh.ReactiveSSP {
         public World World { get; set; }
 
         private SystemStateProcessor<State> processor;
-        private readonly bool emitExistingOnAwake;
+        private bool emitExistingOnAwake;
 
         public ReactiveStashSSP(bool emitExistingOnAwake = true) {
             this.emitExistingOnAwake = emitExistingOnAwake;
