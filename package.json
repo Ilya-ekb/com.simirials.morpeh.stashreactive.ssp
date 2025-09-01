@@ -1,13 +1,16 @@
 {
   "name": "com.simirials.morpeh.stashreactive.ssp",
   "displayName": "Morpeh Stash Reactive (SystemStateProcessor)",
-  "description": "Реактивные события Added/Removed для Stash<T> на базе Morpeh.SystemStateProcessor.",
-  "version": "1.0.0",
+  "description": "Reactive Added/Removed events for Stash<T> using Morpeh.SystemStateProcessor.",
+  "version": "1.0.1",
   "unity": "2021.3",
   "license": "MIT",
   "author": {
     "name": "Simirials"
   },
+  "documentationUrl": "https://github.com/your-org/morpeh-stash-reactive-ssp",
+  "changelogUrl": "https://github.com/your-org/morpeh-stash-reactive-ssp/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/your-org/morpeh-stash-reactive-ssp/blob/main/LICENSE.md",
   "keywords": [
     "morpeh",
     "ecs",
@@ -19,7 +22,7 @@
   "samples": [
     {
       "displayName": "Basic Usage",
-      "description": "Мини-пример подключения и логирования событий Added/Removed.",
+      "description": "Minimal example of subscribing to Added/Removed events.",
       "path": "Samples~/Basic Usage"
     }
   ]
