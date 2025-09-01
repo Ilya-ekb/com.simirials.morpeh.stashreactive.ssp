@@ -1,42 +1,35 @@
-# Morpeh.StashReactive.SSP
+Morpeh.StashReactive.SSP
+Reactive Added/Removed events for Stash<T> based on Morpeh.SystemStateProcessor.
+	•	Unity 2021.3+ (compatible with Unity 6)
+	•	License: MIT
+	•	Requires packages: Morpeh and Morpeh.SystemStateProcessor
 
-Реактивные события **Added/Removed** для `Stash<T>` на базе **Morpeh.SystemStateProcessor**.
+Installation
 
-- Unity **2021.3+** (совместимо с Unity 6)
-- Лицензия: MIT
-- Требуются пакеты Morpeh и Morpeh.SystemStateProcessor
+Install the dependencies via Project → Package Manager:
+	•	Morpeh: https://github.com/scellecs/morpeh.git?path=Scellecs.Morpeh
+	•	SystemStateProcessor: https://github.com/codewriter-packages/Morpeh.SystemStateProcessor.git
 
-## Установка
+Note: Git dependencies cannot be declared in a UPM package’s package.json—only in the project manifest (Packages/manifest.json).
 
-1. Установите зависимости в **Project → Package Manager**:
-   - Morpeh: `https://github.com/scellecs/morpeh.git?path=Scellecs.Morpeh`
-   - SystemStateProcessor: `https://github.com/codewriter-packages/Morpeh.SystemStateProcessor.git`
+Install this package:
+	•	Add package from git URL → your repository URL, or
+	•	Add package from disk → select package.json
 
-> Примечание: Git-зависимости **нельзя** указывать в `package.json` UPM-пакета — только в манифесте проекта (`Packages/manifest.json`).
+Usage
 
-2. Установите этот пакет:
-   - *Add package from git URL* → URL вашего репозитория **или**
-   - *Add package from disk* → выберите `package.json`
-
-## Использование
-
-```csharp
 var sys = World.Default.AddReactiveStashSSP<MyComponent>();
 sys.Added   += e => /* ... */;
 sys.Removed += e => /* ... */;
-```
 
-См. пример в `Samples~/Basic Usage`.
+See the example in Samples~/Basic Usage.
 
-## Почему так
+Why this design
+	•	Events are built on SystemStateProcessor: entity entering/leaving the With<T>() filter triggers Create/Remove callbacks; call .Process() every frame.
+	•	Git dependencies between packages aren’t supported in package.json, so Morpeh and SystemStateProcessor are installed separately in the project.
 
-- События строятся на **SystemStateProcessor**: вход/выход сущности в фильтр `With<T>()` → колбэки `Create/Remove`, вызов `.Process()` в каждом кадре.
-- Git-зависимости между пакетами недоступны в `package.json`, поэтому Morpeh и SystemStateProcessor ставятся в проект отдельно.
+Build
 
-## Сборка
-
-Пакет — **Runtime only** (`asmdef` с ссылками на `Scellecs.Morpeh` и `Scellecs.Morpeh.SystemStateProcessor`).
-
----
+Runtime-only package (an asmdef referencing Scellecs.Morpeh and Scellecs.Morpeh.SystemStateProcessor).
 
 © 2025 Simirials. MIT.
