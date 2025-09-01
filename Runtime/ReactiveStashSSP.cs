@@ -24,7 +24,7 @@ namespace Morpeh.ReactiveSSP {
             processor = World.Filter.With<T>()
                 .ToSystemStateProcessor(Create, Remove);
             if (emitExistingOnAwake) {
-                processor.Process(); // разовая обработка уже существующих
+                processor.Process();
             }
         }
 
@@ -36,13 +36,11 @@ namespace Morpeh.ReactiveSSP {
             Removed = null;
         }
 
-        // Вход в фильтр (добавили T / ожила сущность)
         private State Create(Entity e) {
             Added?.Invoke(e);
             return new State { entity = e };
         }
 
-        // Выход из фильтра или уничтожение сущности
         private void Remove(ref State s) => Removed?.Invoke(s.entity);
 
         private struct State : ISystemStateComponent {
@@ -50,13 +48,47 @@ namespace Morpeh.ReactiveSSP {
         }
     }
 
+    internal static class ReactiveSspGroups {
+        private sealed class GroupsPerWorld {
+            public readonly Dictionary<int, SystemsGroup> byOrder = new();
+        }
+
+        private static readonly ConditionalWeakTable<World, GroupsPerWorld> cache = new();
+
+        public static SystemsGroup GetOrCreate(World world, int order) {
+            var bucket = cache.GetValue(world, _ => new GroupsPerWorld());
+
+            if (bucket.byOrder.TryGetValue(order, out var group))
+                return group;
+
+            group = world.CreateSystemsGroup();
+            try {
+                world.AddSystemsGroup(order, group); 
+            } catch (ArgumentException) {
+                world.AddPluginSystemsGroup(group);
+            }
+            bucket.byOrder[order] = group;
+            return group;
+        }
+    }
+
     public static class ReactiveStashSSPExtensions {
-        public static ReactiveStashSSP<T> AddReactiveStashSSP<T>(this World world, bool emitExistingOnAwake = true)
+        public static ReactiveStashSSP<T> AddReactiveStashSSP<T>(
+            this World world, int order = 100, bool emitExistingOnAwake = true)
             where T : struct, IComponent {
+
             var sys = new ReactiveStashSSP<T>(emitExistingOnAwake);
-            var group = world.CreateSystemsGroup();
+            var group = ReactiveSspGroups.GetOrCreate(world, order);
             group.AddSystem(sys);
-            world.AddPluginSystemsGroup(group);
+            return sys;
+        }
+
+        public static ReactiveStashSSP<T> AddReactiveStashSSP<T>(
+            this SystemsGroup group, bool emitExistingOnAwake = true)
+            where T : struct, IComponent {
+
+            var sys = new ReactiveStashSSP<T>(emitExistingOnAwake);
+            group.AddSystem(sys);
             return sys;
         }
     }
