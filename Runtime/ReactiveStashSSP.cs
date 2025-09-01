@@ -2,6 +2,7 @@
 using System;
 using Scellecs.Morpeh;
 using Scellecs.Morpeh.Systems;
+using System.Runtime.CompilerServices;
 using Unity.IL2CPP.CompilerServices;
 
 namespace Morpeh.ReactiveSSP {
