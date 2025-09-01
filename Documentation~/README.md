@@ -43,7 +43,7 @@ Unity **2021.3+** (compatible with Unity 6) • License: **MIT** • Requires **
 > How to install from a Git URL via Package Manager (official docs).  [Unity Documentation](https://docs.unity3d.com/6000.2/Documentation/Manual/upm-ui-giturl.html?utm_source=chatgpt.com)
 
 ### 2) Install this package
-- **Add package from git URL** → `https://github.com/Ilya-ekb/morpeh-stash-reactive`  
+- **Add package from git URL** → `https://github.com/Ilya-ekb/morpeh-stash-reactive.git`  
   *(or use **Add package from disk** and select `package.json` if you keep it locally).*
 
 ### 3) Import the sample
