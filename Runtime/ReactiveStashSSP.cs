@@ -32,7 +32,15 @@ namespace Morpeh.ReactiveSSP {
             }
         }
 
-        public void OnUpdate(float deltaTime) => processor.Process();
+        public void OnUpdate(float deltaTime)
+        {
+            if (!emitExistingOnAwake)
+            {
+                emitExistingOnAwake = true;
+                return;
+            }
+            processor.Process();   
+        }
 
         public void Dispose() {
             processor.Dispose();
