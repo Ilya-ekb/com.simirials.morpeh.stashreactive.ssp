@@ -68,6 +68,7 @@ namespace Morpeh.ReactiveSSP {
         private static readonly ConditionalWeakTable<World, Entry> table = new();
 
         public static ReactiveStashSSP<T> GetOrCreate(World world, int order, bool emitExistingOnAwake) {
+            if(world is null) return default;
             var entry = table.GetValue(world, _ => new Entry());
             if (entry.System != null)
                 return entry.System;
